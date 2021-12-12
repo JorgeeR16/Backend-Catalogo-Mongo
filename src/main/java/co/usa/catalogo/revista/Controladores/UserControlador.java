@@ -61,7 +61,7 @@ public class UserControlador {
         return userServicio.authenticateUser(email, password);
     }
 
-    @GetMapping("/{email}")
+    @GetMapping("/emailexist/{email}")
     public boolean existeEmail(@PathVariable("email") String email) {
         return userServicio.existeEmail(email);
     }
