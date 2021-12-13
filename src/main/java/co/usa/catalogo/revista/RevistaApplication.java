@@ -67,7 +67,7 @@ public class RevistaApplication implements CommandLineRunner {
 				new User(6, "213456789", "PEDRO CAPAROSA", ft.parse("1966-02-15"), "02", "CR 34-45", "3168965645",
 						"pcaparosa@gmail.com", "Demo123.", "ZONA 1", "ASE"),
 				new User(7, "312456789", "LUIS IXV UN SOL", ft.parse("1966-02-15"), "02", "CR 34-45", "3168965645",
-						"reysol@gmail.com", "Demo123.", "ZONA 1", "ASE")));*/
+						"reysol@gmail.com", "Demo123.", "ZONA 1", "ASE")));
 						
 
 		// Instanciar las ordenes
@@ -123,7 +123,7 @@ public class RevistaApplication implements CommandLineRunner {
 		orderCrudRepository.saveAll(List.of(orderOne, orderTwo));
 
 		System.out.println("Listado de ordenes");
-		orderCrudRepository.findAll().forEach(System.out::println);
+		orderCrudRepository.findAll().forEach(System.out::println);*/
 
 	}
 }
