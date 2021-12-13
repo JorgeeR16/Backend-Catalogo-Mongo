@@ -20,7 +20,8 @@ public class User implements Serializable {
     private String identification;
 
     private String name;
-
+    private Date birthtDay;
+    private String monthBirthtDay;
     private String address;
 
     private String cellPhone;
