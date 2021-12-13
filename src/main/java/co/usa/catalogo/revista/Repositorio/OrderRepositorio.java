@@ -42,6 +42,6 @@ public class OrderRepositorio {
     
     
     public List<Order> findByZone(String zona) {
-        return repository.findByZone(zona);
+        return orderCrudRepository.findByZone(zona);
     }
 }

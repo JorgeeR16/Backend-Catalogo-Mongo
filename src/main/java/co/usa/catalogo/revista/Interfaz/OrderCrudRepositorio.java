@@ -13,7 +13,7 @@ public interface OrderCrudRepositorio extends MongoRepository<Order, Integer> {
     // Retorna las ordenes de pedido que coincidad con la zona recibida como
     // parametro
     @Query("{'salesMan.zone': ?0}")
-    List<Order> findByZone(final String country);
+    List<Order> findByZone(final String zone);
 
     // Retorna las ordenes x estado
     @Query("{status: ?0}")
