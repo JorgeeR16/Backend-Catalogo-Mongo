@@ -24,22 +24,25 @@ public class UserServicio {
     }
 
     public User create(User user) {
+        Optional<User> userIdMaximo = userRepository.lastUserId();
         if (user.getId() == null) {
-            return user;
-        } else {
-            Optional<User> e = userRepository.getUser(user.getId());
-            if (e.isEmpty()) {
-                if (existeEmail(user.getEmail()) == false) {
-                    return userRepository.create(user);
-                } else {
-                    return user;
-                }
+            if (userIdMaximo.isEmpty())
+                user.setId(1);
+            else
+                user.setId(userIdMaximo.get().getId() + 1);
+        }
+        Optional<User> e = userRepository.getUser(user.getId());
+        if (e.isEmpty()) {
+            if (existeEmail(user.getEmail()) == false) {
+                return userRepository.create(user);
             } else {
                 return user;
             }
+        } else {
+            return user;
         }
     }
-
+    
     public User update(User user) {
         if (user.getId() != null) {
             Optional<User> userDB = userRepository.getUser(user.getId());

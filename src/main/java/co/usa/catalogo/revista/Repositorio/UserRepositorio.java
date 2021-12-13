@@ -23,12 +23,12 @@ public class UserRepositorio {
         return userCrudRepositorio.findById(id);
     }
 
-    public void update(User user) {
-        userCrudRepositorio.save(user);
-    }
-
     public User create(User user) {
         return userCrudRepositorio.save(user);
+    }
+
+    public void update(User user) {
+        userCrudRepositorio.save(user);
     }
 
     public void delete(User user) {
@@ -42,6 +42,10 @@ public class UserRepositorio {
 
     public Optional<User> autenticarUsuario(String email, String password) {
         return userCrudRepositorio.findByEmailAndPassword(email, password);
+    }
+
+    public Optional<User> lastUserId(){
+        return userCrudRepositorio.findTopByOrderByIdDesc();
     }
 
 }

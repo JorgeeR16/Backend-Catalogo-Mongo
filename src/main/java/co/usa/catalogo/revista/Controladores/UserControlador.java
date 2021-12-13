@@ -1,6 +1,7 @@
 package co.usa.catalogo.revista.Controladores;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,6 +36,11 @@ public class UserControlador {
     @ResponseStatus(HttpStatus.OK)
     public List<User> getAll() {
         return userServicio.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Optional <User> getUser(@PathVariable("id") int id) {
+        return userServicio.getUser(id);
     }
 
     @PostMapping("/new")
