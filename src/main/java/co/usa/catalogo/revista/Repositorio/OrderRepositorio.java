@@ -40,4 +40,8 @@ public class OrderRepositorio {
         return orderCrudRepository.findTopByOrderByIdDesc();
     }
     
+    
+    public List<Order> findByZone(String zona) {
+        return repository.findByZone(zona);
+    }
 }

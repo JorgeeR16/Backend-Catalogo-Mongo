@@ -73,4 +73,7 @@ public class OrderServicio {
         return aBoolean;
     }
     
+    public List<Order> findByZone(String zona) {
+        return repository.findByZone(zona);
+    }
 }
