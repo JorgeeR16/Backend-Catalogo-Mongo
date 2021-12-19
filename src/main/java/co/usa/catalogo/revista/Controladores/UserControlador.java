@@ -72,4 +72,9 @@ public class UserControlador {
         return userServicio.existeEmail(email);
     }
 
+    @GetMapping("/birthday/{month}")
+    public List<User> birthtDayList(@PathVariable("month") String monthBirthtDay) {
+        return userServicio.birthtDayList(monthBirthtDay);
+    }
+
 }

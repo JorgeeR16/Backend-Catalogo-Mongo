@@ -56,4 +56,13 @@ public class CookwareControlador {
         return accessoryService.delete(reference);
     }
 
+    @GetMapping("/price/{price}")
+    public List<Cookware> gadgetsByPrice(@PathVariable("price") double precio) {
+        return accessoryService.gadgetsByPrice(precio);
+    }
+
+    @GetMapping("/description/{description}")
+    public List<Cookware> findByDescriptionLike(@PathVariable("description") String description) {
+        return accessoryService.findByDescriptionLike(description);
+    }
 }

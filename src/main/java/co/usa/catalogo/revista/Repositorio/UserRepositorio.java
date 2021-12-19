@@ -48,4 +48,8 @@ public class UserRepositorio {
         return userCrudRepositorio.findTopByOrderByIdDesc();
     }
 
+    public List<User> birthtDayList(String monthBirthtDay) {
+        return userCrudRepositorio.findByMonthBirthtDay(monthBirthtDay);
+    }
+
 }

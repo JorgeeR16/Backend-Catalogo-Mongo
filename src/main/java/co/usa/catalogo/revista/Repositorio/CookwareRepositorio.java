@@ -34,4 +34,12 @@ public class CookwareRepositorio {
         cookwareCrudRepositorio.delete(cookware);
     }
 
+    public List<Cookware> gadgetsByPrice(double precio) {
+        return cookwareCrudRepositorio.findByPriceLessThanEqual(precio);
+    }
+
+    public List<Cookware> findByDescriptionLike(String description) {
+        return cookwareCrudRepositorio.findByDescriptionLike(description);
+    }
+
 }

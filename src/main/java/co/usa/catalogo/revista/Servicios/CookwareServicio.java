@@ -87,4 +87,12 @@ public class CookwareServicio {
         }).orElse(false);
         return aBoolean;
     }
+
+    public List<Cookware> gadgetsByPrice(double price) {
+        return cookwareRepository.gadgetsByPrice(price);
+    }
+
+    public List<Cookware> findByDescriptionLike(String description) {
+        return cookwareRepository.findByDescriptionLike(description);
+    }
 }
